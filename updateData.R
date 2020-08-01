@@ -14,7 +14,7 @@ library(tidyr)
 library(dplyr)
 
 print(paste0(' --------- ', date(), ' --------- '))
-setwd("/home/jliao/workspace/ReLiSyR_Update")
+setwd("/home/jliao/workspace/AnDSelect")
 print(getwd())
 updateData(syrfConnection = syrfConnection,
             myProjectId = clinicalProjectId,
@@ -29,7 +29,7 @@ updateData(syrfConnection = syrfConnection,
             drugSheetName = drugSheetName)
 
 print(paste0(' --------- ', date(), ' --------- '))
-setwd("/home/jliao/workspace/ReLiSyR_Update")
+setwd("/home/jliao/workspace/AnDSelect")
 print(getwd())
 updateData(syrfConnection = syrfConnection,
            myProjectId = invivoProjectId,
@@ -41,17 +41,3 @@ updateData(syrfConnection = syrfConnection,
            logSheetName = invivoLogSheetName,
            diseaseSheetName = diseaseSheetName,
            drugSheetName = drugSheetName)
-
-source('R/relisyrScoring.R')
-
-CreateProgressSummary(syrfConnection, clinicalProjectId, invivoProjectId,
-                                  mySQLCon, clinicalSQLTableName,invivoSQLTableName,
-                                  googleSheetId,
-                                  diseaseOfInterestSheetName = diseaseOfInterestSheetName,
-                                  drugOfInterestSheetName = drugOfInterestSheetName,
-                                  diseaseSheetName = diseaseSheetName,
-                                  drugSheetName = drugSheetName,
-                                  scoreRuleSheetName = scoreRuleSheetName,
-                                  progressSummarySheetName = progressSummarySheetName,
-                                  clinicalProjectProgresRangeLine = clinicalProjectProgresRangeLine,
-                                  invivoProjectProgresRangeLine = invivoProjectProgresRangeLine)
